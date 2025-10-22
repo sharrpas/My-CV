@@ -41,6 +41,14 @@
     top: 55px;
 }
 
+.style-switcher .export-pdf{
+    top: 110px;
+}
+
+.style-switcher .s-icon:hover{
+    color: var(--skin-color);
+}
+
 .style-switcher h4{
     margin: 0 0 10px;
     color: var(--text-black-700);

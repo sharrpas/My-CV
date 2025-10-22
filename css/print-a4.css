@@ -1,0 +1,488 @@
+/* A4 Print Layout - Only applies when printing or generating PDF */
+
+@media print {
+    /* Reset body for print - White background, black text */
+    body {
+        background: white !important;
+        color: #000 !important;
+        font-size: 10pt;
+        line-height: 1.4;
+    }
+    
+    /* Force white backgrounds for all sections */
+    .section,
+    .main-container,
+    .main-content,
+    .container {
+        background: white !important;
+    }
+    
+    /* Force black text for readability */
+    p, span, h1, h2, h3, h4, h5, h6, li, div {
+        color: #000 !important;
+    }
+    
+    /* Links in black */
+    a {
+        color: #000 !important;
+    }
+    
+    /* ===== GRAPHICAL ELEMENTS - Use theme color ===== */
+    
+    /* Section title underlines */
+    .section-title h2::before,
+    .section-title h2::after {
+        background-color: var(--skin-color) !important;
+    }
+    
+    /* Skills progress bars */
+    .skills .skill-item .progress-in {
+        background-color: var(--skin-color) !important;
+    }
+    
+    .skills .skill-item .progress {
+        background-color: #e8e8e8 !important;
+    }
+    
+    /* Timeline elements */
+    .timeline .timeline-item::before {
+        background-color: var(--skin-color) !important;
+    }
+    
+    .timeline .circle-dot {
+        background-color: var(--skin-color) !important;
+        border: 2px solid white !important;
+    }
+    
+    /* Tech tags */
+    .timeline-text span[style*="color:var(--skin-color)"],
+    span[style*="color:var(--skin-color)"] {
+        color: var(--skin-color) !important;
+    }
+    
+    /* Calendar icons and other Font Awesome icons */
+    .fa, .fas, .fab {
+        color: var(--skin-color) !important;
+    }
+    
+    /* Contact info icons */
+    .contact .contact-info-item .icon .fa,
+    .contact .contact-info-item .icon .fab {
+        color: var(--skin-color) !important;
+    }
+    
+    /* Service/Tool item icons remain as images - no color change needed */
+    
+    /* Home section decorative borders */
+    .home .home-img::before,
+    .home .home-img::after {
+        border-color: var(--skin-color) !important;
+    }
+    
+    /* Shadow boxes */
+    .shadow-dark {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        background: white !important;
+    }
+    
+    /* Timeline box background */
+    .timeline {
+        background: white !important;
+        border: 1px solid #ddd !important;
+    }
+
+    /* Hide navigation elements */
+    .aside,
+    .nav-toggler,
+    .style-switcher,
+    .export-pdf-btn,
+    .no-print,
+    .btn {
+        display: none !important;
+    }
+
+    /* Full width for main content */
+    .main-content {
+        padding-left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Container adjustments */
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .section {
+        padding: 15px 20px;
+        min-height: auto;
+        page-break-inside: avoid;
+    }
+
+    /* Section titles */
+    .section-title h2 {
+        font-size: 18pt;
+        margin-bottom: 10px;
+        page-break-after: avoid;
+        color: #000 !important;
+    }
+    
+    /* Title styling */
+    .title {
+        font-size: 14pt;
+        color: #000 !important;
+    }
+
+    /* Home section */
+    .home {
+        min-height: auto;
+        page-break-after: always;
+    }
+
+    .home .home-info {
+        flex: 0 0 60%;
+    }
+
+    .home .home-info h3 {
+        font-size: 16pt;
+        color: #000 !important;
+    }
+    
+    .home .home-info h3 .name {
+        color: var(--skin-color) !important;
+    }
+    
+    .home .home-info h3 .typing {
+        color: var(--skin-color) !important;
+    }
+
+    .home .home-info p {
+        font-size: 10pt;
+        margin-bottom: 20px;
+        color: #333 !important;
+    }
+
+    .home .home-img {
+        flex: 0 0 40%;
+    }
+
+    .home .home-img img {
+        height: 250px;
+        width: auto;
+    }
+
+    /* About section */
+    .about .about-content .about-text h3 {
+        font-size: 14pt;
+        color: #000 !important;
+    }
+    
+    .about .about-content .about-text h3 span {
+        color: var(--skin-color) !important;
+    }
+
+    .about .about-content .about-text p {
+        font-size: 9pt;
+        line-height: 1.5;
+        color: #333 !important;
+    }
+
+    /* Personal info */
+    .personal-info {
+        flex: 0 0 48%;
+        page-break-inside: avoid;
+    }
+
+    .personal-info .item-info p {
+        font-size: 9pt;
+        padding: 5px 0;
+        color: #000 !important;
+        border-bottom: 1px solid #e8e8e8 !important;
+    }
+    
+    .personal-info .item-info p span {
+        color: #333 !important;
+    }
+    
+    .personal-info .item-info p a {
+        color: var(--skin-color) !important;
+        text-decoration: none;
+    }
+
+    /* Skills */
+    .skills {
+        flex: 0 0 48%;
+        page-break-inside: avoid;
+    }
+
+    .skills .skill-item {
+        margin-bottom: 10px;
+    }
+
+    .skills .skill-item h5 {
+        font-size: 9pt;
+        line-height: 20px;
+    }
+
+    .skills .skill-item .progress {
+        height: 5px;
+    }
+
+    .skills .skill-item .skill-percent {
+        font-size: 8pt;
+        top: -20px;
+    }
+
+    /* Timeline (Work Experience & Education) */
+    .timeline {
+        padding: 15px;
+    }
+
+    .timeline .timeline-item {
+        padding-left: 25px;
+        padding-bottom: 20px;
+        page-break-inside: avoid;
+    }
+
+    .timeline .timeline-item::before {
+        left: 5px;
+    }
+
+    .timeline .circle-dot {
+        left: 0;
+        width: 10px;
+        height: 10px;
+    }
+
+    .timeline .timeline-date {
+        font-size: 9pt;
+        margin-bottom: 5px;
+        color: #666 !important;
+    }
+    
+    .timeline .timeline-date .fa {
+        color: var(--skin-color) !important;
+    }
+
+    .timeline .timeline-title {
+        font-size: 12pt;
+        margin-bottom: 8px;
+        color: #000 !important;
+    }
+
+    .timeline .timeline-title img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .timeline .timeline-text {
+        font-size: 9pt;
+        line-height: 1.4;
+        color: #333 !important;
+    }
+    
+    /* Tech tags inside timeline */
+    .timeline .timeline-text div[style*="flex-wrap"] span {
+        color: #000 !important;
+    }
+    
+    .timeline .timeline-text div[style*="flex-wrap"] span span[style*="color:var(--skin-color)"] {
+        color: var(--skin-color) !important;
+    }
+
+    /* Tools/Services */
+    .service .service-item {
+        flex: 0 0 33.33%;
+        margin-bottom: 15px;
+        page-break-inside: avoid;
+    }
+
+    .service .service-item .service-item-inner {
+        padding: 15px 10px;
+        background: white !important;
+        border: 1px solid #ddd !important;
+    }
+
+    .service .service-item h4 {
+        font-size: 10pt;
+        color: #000 !important;
+    }
+
+    .service .service-item p {
+        font-size: 8pt;
+        line-height: 1.3;
+        color: #333 !important;
+    }
+
+    .service .service-item .icon {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 10px;
+    }
+
+    .service .service-item .icon img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    /* Portfolio/Projects */
+    .portfolio .portfolio-item {
+        flex: 0 0 50%;
+        margin-bottom: 15px;
+        page-break-inside: avoid;
+    }
+
+    .portfolio .portfolio-item-inner {
+        border: 2px solid #ddd !important;
+        background: white !important;
+    }
+
+    .portfolio .portfolio-img {
+        height: 150px;
+    }
+
+    .portfolio .portfolio-img img {
+        height: 100%;
+    }
+
+    .portfolio .portfolio-item-link {
+        position: static;
+        height: auto;
+        background-color: transparent;
+    }
+
+    .portfolio .portfolio-item-link p {
+        font-size: 10pt;
+        margin: 5px 0;
+        color: #000 !important;
+        background-color: transparent !important;
+    }
+
+    /* Contact */
+    .contact .contact-info-item {
+        flex: 0 0 50%;
+        margin-bottom: 20px;
+        page-break-inside: avoid;
+    }
+
+    .contact .contact-info-item h4 {
+        font-size: 10pt;
+        color: #000 !important;
+    }
+
+    .contact .contact-info-item p {
+        font-size: 9pt;
+        color: #333 !important;
+    }
+
+    .contact .contact-info-item .icon {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    .contact .contact-info-item .icon .fa,
+    .contact .contact-info-item .icon .fab {
+        font-size: 20px;
+    }
+
+    .contact-title {
+        font-size: 14pt;
+        color: var(--skin-color) !important;
+    }
+
+    .contact-sub-title {
+        font-size: 11pt;
+        margin-bottom: 30px;
+        color: #000 !important;
+    }
+
+    /* Page breaks */
+    .about {
+        page-break-before: always;
+    }
+
+    .service {
+        page-break-before: always;
+    }
+
+    .portfolio {
+        page-break-before: auto;
+    }
+
+    .contact {
+        page-break-before: auto;
+    }
+
+    /* Avoid orphans and widows */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+    p, li {
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* Links */
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a[href]:after {
+        content: none;
+    }
+
+    /* Shadows removed for print */
+    .shadow-dark {
+        box-shadow: none !important;
+        border: 1px solid #ddd;
+    }
+
+    /* Modal hidden */
+    .modal {
+        display: none !important;
+    }
+
+    /* Images */
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+
+    /* Typography */
+    .title {
+        font-size: 14pt;
+    }
+
+    .padd-15 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Remove animations and transitions */
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Ensure black text for print */
+    body:not(.dark) {
+        color: #000;
+    }
+
+    /* A4 Page Setup */
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+    /* First page (cover) */
+    @page :first {
+        margin-top: 10mm;
+    }
+}
+
+

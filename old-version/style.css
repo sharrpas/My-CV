@@ -80,10 +80,6 @@ ul {
     display: none !important;
 }
 
-.no-print {
-    /* Hidden in print */
-}
-
 .btn:hover {
     transform: scale(1.05);
 }
