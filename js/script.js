@@ -457,13 +457,13 @@ function generatePrintHTML(themeColor) {
                 </div>
             </div>
             
-            <!-- Work Experience - Full Width -->
+            <!-- Work Experience - Full Width (First Job Only) -->
             <div class="section">
                 <div class="section-title">
                     <i class="fas fa-briefcase"></i>
                     Work Experience
                 </div>
-                ${workExperience.slice(0, 2).map(job => `
+                ${workExperience.slice(0, 1).map(job => `
                             <div class="timeline-item">
                                 <div class="timeline-header">
                                     <div class="timeline-company">
@@ -497,7 +497,7 @@ function generatePrintHTML(themeColor) {
                     <i class="fas fa-briefcase"></i>
                     Work Experience (continued)
                 </div>
-                ${workExperience.slice(2).map(job => `
+                ${workExperience.slice(1).map(job => `
                     <div class="timeline-item">
                         <div class="timeline-header">
                             <div class="timeline-company">
