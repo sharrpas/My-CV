@@ -27,8 +27,10 @@ function renderCV() {
     document.getElementById('page-title').textContent = `${personal.name} - CV`;
     
     // Update logo
-    if (personal.logoInitial) document.getElementById('logoInitial').textContent = personal.logoInitial;
-    if (personal.logo) document.getElementById('logoText').textContent = personal.logo.replace(personal.logoInitial, '');
+    if (personal.logoInitial) {
+        const logoInitial = document.getElementById('logoInitial');
+        if (logoInitial) logoInitial.textContent = personal.logoInitial;
+    }
     
     // Update home section
     document.getElementById('personName').textContent = personal.name;
