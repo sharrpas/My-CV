@@ -19,13 +19,18 @@
     "about": "I am a Laravel developer with 6 years of experience using PHP and Laravel. I specialize in creating web applications for a wide range of clients and businesses, utilizing the latest technologies and best practices to ensure that all my projects are of the highest quality. I have a strong understanding of the Laravel framework and how to leverage its features to create robust, efficient and secure applications and good knowledge of the MVC architecture and am also skilled in using databases and ORM tools. experienced in working with MySQL, HTML, JavaScript and CSS. I am passionate about creating powerful web applications that are user-friendly and have great performance. I strive to stay up-to-date with the latest trends and technologies in the web development industry, and I am always looking for opportunities to learn and grow"
   },
   "skills": [
-    { "name": "PHP", "level": 82 },
-    { "name": "Laravel", "level": 78 },
-    { "name": "MySql", "level": 86 },
-    { "name": "postgresql", "level": 62 },
-    { "name": "Livewire", "level": 82 },
-    { "name": "Tailwind", "level": 74 },
-    { "name": "Rest Api", "level": 89 }
+    { "name": "PHP", "icon": "fab fa-php" },
+    { "name": "Laravel", "icon": "fab fa-laravel" },
+    { "name": "MySql", "icon": "fas fa-database" },
+    { "name": "PostgreSQL", "icon": "fas fa-database" },
+    { "name": "Livewire", "icon": "fas fa-bolt" },
+    { "name": "Tailwind", "icon": "fas fa-palette" },
+    { "name": "Rest API", "icon": "fas fa-code" },
+    { "name": "Docker", "icon": "fab fa-docker" },
+    { "name": "Git", "icon": "fab fa-git-alt" },
+    { "name": "Redis", "icon": "fas fa-server" },
+    { "name": "Nginx", "icon": "fas fa-server" },
+    { "name": "Linux", "icon": "fab fa-linux" }
   ],
   "workExperience": [
     {

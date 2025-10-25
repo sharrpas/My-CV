@@ -441,6 +441,46 @@ h3.my-profession {
     margin-top: 40px;
 }
 
+/* Skill Badges */
+.skill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 25px;
+    margin: 5px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-badge:hover {
+    background: var(--skin-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skill-badge i {
+    font-size: 18px;
+    color: var(--skin-color);
+}
+
+.skill-badge:hover i {
+    color: white;
+}
+
+.skill-badge span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-black-900);
+}
+
+.skill-badge:hover span {
+    color: white;
+}
+
 .about .about-content .skills .skill-item {
     flex: 0 0 100%;
     max-width: 100%;

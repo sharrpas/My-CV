@@ -115,12 +115,9 @@ function renderPersonalInfo() {
 function renderSkills() {
     const container = document.getElementById('skillsContainer');
     const skillsHTML = cvData.skills.map(skill => `
-        <div class="skill-item padd-15">
-            <h5>${skill.name}</h5>
-            <div class="progress">
-                <div class="progress-in" style="width:${skill.level}%"></div>
-                <div class="skill-percent">${skill.level}%</div>
-            </div>
+        <div class="skill-badge padd-15">
+            <i class="${skill.icon}"></i>
+            <span>${skill.name}</span>
         </div>
     `).join('');
     container.innerHTML = skillsHTML;
@@ -411,10 +408,10 @@ function generatePrintHTML(themeColor) {
                 <div class="about-text">${personal.about}</div>
             </div>
             
-            <!-- Two Columns -->
+            <!-- Two Columns: Personal Info & Skills -->
             <div class="two-column">
                 <!-- Personal Info -->
-                <div class="column column-33">
+                <div class="column">
                     <div class="section">
                         <div class="section-title" style="font-size: 12pt;">
                             <i class="fas fa-info-circle"></i>
@@ -439,35 +436,34 @@ function generatePrintHTML(themeColor) {
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Skills -->
+                </div>
+                
+                <!-- Skills -->
+                <div class="column">
                     <div class="section">
                         <div class="section-title" style="font-size: 12pt;">
                             <i class="fas fa-code"></i>
                             Skills
                         </div>
-                        ${skills.map(skill => `
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">${skill.name}</span>
-                                    <span class="skill-percent">${skill.level}%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: ${skill.level}%;"></div>
-                                </div>
-                            </div>
-                        `).join('')}
+                        <div class="skills-badges">
+                            ${skills.map(skill => `
+                                <span class="skill-badge-print">
+                                    <i class="${skill.icon}"></i>
+                                    ${skill.name}
+                                </span>
+                            `).join('')}
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Work Experience (First 2) -->
-                <div class="column column-66">
-                    <div class="section">
-                        <div class="section-title" style="font-size: 12pt;">
-                            <i class="fas fa-briefcase"></i>
-                            Work Experience
-                        </div>
-                        ${workExperience.slice(0, 2).map(job => `
+            </div>
+            
+            <!-- Work Experience - Full Width -->
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    Work Experience
+                </div>
+                ${workExperience.slice(0, 2).map(job => `
                             <div class="timeline-item">
                                 <div class="timeline-header">
                                     <div class="timeline-company">
@@ -490,8 +486,6 @@ function generatePrintHTML(themeColor) {
                                 <a href="${job.link}" class="timeline-link">${job.link}</a>
                             </div>
                         `).join('')}
-                    </div>
-                </div>
             </div>
         </div>
         
@@ -685,20 +679,15 @@ function getPrintStyles() {
         .section-title i { color: var(--theme-color); font-size: 14pt; }
         .two-column { display: flex; gap: 20px; margin-bottom: 20px; }
         .column { flex: 1; }
-        .column-33 { flex: 0 0 33%; }
-        .column-66 { flex: 0 0 63%; }
         .about-text { font-size: 10pt; line-height: 1.6; color: #333; text-align: justify; margin-bottom: 15px; }
         .info-grid { display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 9pt; }
         .info-item { display: flex; padding: 5px 0; border-bottom: 1px solid #e8e8e8; }
         .info-label { font-weight: 600; color: #000; margin-right: 5px; }
         .info-value { color: #333; }
         .info-value a { color: var(--theme-color); text-decoration: none; }
-        .skill-item { margin-bottom: 12px; }
-        .skill-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; font-size: 9pt; }
-        .skill-name { font-weight: 600; color: #000; }
-        .skill-percent { color: #666; font-size: 8pt; }
-        .skill-bar { height: 6px; background: #e8e8e8; border-radius: 3px; overflow: hidden; }
-        .skill-progress { height: 100%; background: var(--theme-color); border-radius: 3px; }
+        .skills-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+        .skill-badge-print { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: white; border: 1.5px solid var(--theme-color); border-radius: 20px; font-size: 9pt; color: #000; font-weight: 500; }
+        .skill-badge-print i { color: var(--theme-color); font-size: 10pt; }
         .timeline-item { position: relative; padding-left: 20px; padding-bottom: 15px; border-left: 2px solid var(--theme-color); margin-bottom: 10px; page-break-inside: avoid; }
         .timeline-item:last-child { border-left: 2px solid transparent; padding-bottom: 0; }
         .timeline-item::before { content: ''; position: absolute; left: -6px; top: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--theme-color); border: 2px solid white; box-shadow: 0 0 0 1px var(--theme-color); }
