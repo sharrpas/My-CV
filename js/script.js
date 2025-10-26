@@ -1,21 +1,27 @@
-// Load CV Data from config.json
-let cvData = null;
+// cvData is loaded from config.js
 
-// Load config and initialize
-document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        const response = await fetch('config.json');
-        cvData = await response.json();
-        renderCV();
-        initTypingAnimation();
-        initScrollNavigation();
-    } catch (error) {
-        console.error('Error loading config:', error);
-        // Fallback to default if config fails
-        initTypingAnimation();
-        initScrollNavigation();
-    }
+// Application initialization
+document.addEventListener('DOMContentLoaded', () => {
+    populateElements();
+    renderCV();
+    initScrollNavigation();
+    initTypingAnimation();
 });
+
+// Populate HTML elements by their IDs using data from cvData
+function populateElements() {
+    const { personal } = cvData;
+
+    // Set text content by element IDs
+    document.getElementById('page-title').textContent = `${personal.name} - CV`;
+    document.getElementById('personName').textContent = personal.name;
+    document.getElementById('intro').textContent = personal.intro;
+    document.getElementById('profileImage').src = personal.profileImage;
+    document.getElementById('aboutName').textContent = personal.name;
+    document.getElementById('aboutTitle').textContent = personal.title;
+    document.getElementById('aboutText').textContent = personal.about;
+    document.getElementById('logoInitial').textContent = personal.logoInitial;
+}
 
 // Render CV from config
 function renderCV() {
@@ -127,38 +133,55 @@ function renderSkills() {
 
 // Render Work Experience
 function renderWorkExperience() {
-    const container = document.getElementById('workExperienceTimeline');
-    const workHTML = cvData.workExperience.map(job => `
-        <div class="timeline-item">
-            <div class="circle-dot"></div>
-            <h3 class="timeline-date">
-                <i class="fa fa-calendar"></i>
-                ${job.period}
-            </h3>
-            <h4 class="timeline-title" style="display: flex;align-items: center;">
-                ${job.logo ? `<img style="width: 60px;height: 60px;object-fit: contain;margin:0 10px;" src="${job.logo}" alt="${job.company}">` : ''}
-                ${job.company}
-            </h4>
-            <p class="timeline-text">
-                ${job.position}
-                <br><br>
-                ${job.description}
-                <br><br>
-                Responsibilities:
-                <br>
-                ${job.responsibilities.map(resp => `- ${resp}<br>`).join('')}
-                <div style="display: flex;flex-wrap: wrap;">
-                    ${job.technologies.map(tech => `
-                        <span style="display: flex;color: var(--text-black-700);margin-right:10px">
-                            <span style="color:var(--skin-color)">#</span>${tech}
-                        </span>
-                    `).join('')}
-                </div>
-                <a class="btn" href="${job.link}" target="_blank">Any More ...</a>
-            </p>
-        </div>
-    `).join('');
-    container.innerHTML = workHTML;
+    try {
+        const container = document.getElementById('workExperienceTimeline');
+        if (!container) {
+            console.error('Work experience container not found');
+            return;
+        }
+
+        if (!cvData.workExperience || !Array.isArray(cvData.workExperience)) {
+            console.error('Work experience data is invalid');
+            return;
+        }
+
+        console.log('Rendering work experience:', cvData.workExperience.length, 'items');
+
+        const workHTML = cvData.workExperience.map(job => `
+            <div class="timeline-item">
+                <div class="circle-dot"></div>
+                <h3 class="timeline-date">
+                    <i class="fa fa-calendar"></i>
+                    ${job.period}
+                </h3>
+                <h4 class="timeline-title" style="display: flex;align-items: center;">
+                    ${job.logo ? `<img style="width: 60px;height: 60px;object-fit: contain;margin:0 10px;" src="${job.logo}" alt="${job.company}">` : ''}
+                    ${job.company}
+                </h4>
+                <p class="timeline-text">
+                    ${job.position}
+                    <br><br>
+                    ${job.description}
+                    <br><br>
+                    Responsibilities:
+                    <br>
+                    ${job.responsibilities.map(resp => `- ${resp}<br>`).join('')}
+                    <div style="display: flex;flex-wrap: wrap;">
+                        ${job.technologies.map(tech => `
+                            <span style="display: flex;color: var(--text-black-700);margin-right:10px">
+                                <span style="color:var(--skin-color)">#</span>${tech}
+                            </span>
+                        `).join('')}
+                    </div>
+                    <a class="btn" href="${job.link}" target="_blank">Any More ...</a>
+                </p>
+            </div>
+        `).join('');
+        container.innerHTML = workHTML;
+        console.log('Work experience rendered successfully');
+    } catch (error) {
+        console.error('Error rendering work experience:', error);
+    }
 }
 
 // Render Education

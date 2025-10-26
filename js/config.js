@@ -1,3 +1,4 @@
+const cvData = 
 {
   "personal": {
     "name": "Sina Fathi",
@@ -15,7 +16,7 @@
     "telegram": "@sina_sharrpas",
     "profileImage": "images/me2.png",
     "icon": "images/sin.svg",
-    "intro": "Passionate Backend Developer & DevOps Engineer with 4+ years of experience building scalable web applications. Expert in Laravel, PHP, and modern DevOps practices, delivering robust solutions for startups and enterprises across diverse industries.",
+    "intro": "Passionate Backend Developer & DevOps Engineer with +6 years of experience building scalable web applications. Expert in Laravel, PHP, and modern DevOps practices, delivering robust solutions for startups and enterprises across diverse industries.",
     "about": "I am a Laravel developer with 6 years of experience using PHP and Laravel. I specialize in creating web applications for a wide range of clients and businesses, utilizing the latest technologies and best practices to ensure that all my projects are of the highest quality. I have a strong understanding of the Laravel framework and how to leverage its features to create robust, efficient and secure applications and good knowledge of the MVC architecture and am also skilled in using databases and ORM tools. experienced in working with MySQL, HTML, JavaScript and CSS. I am passionate about creating powerful web applications that are user-friendly and have great performance. I strive to stay up-to-date with the latest trends and technologies in the web development industry, and I am always looking for opportunities to learn and grow"
   },
   "skills": [
@@ -33,6 +34,20 @@
     { "name": "Linux", "icon": "fab fa-linux" }
   ],
   "workExperience": [
+    {
+      "company": "GomJoo",
+      "logo": "images/gomjoo.png",
+      "position": "CTO",
+      "period": "2025 - now",
+      "description": "GomJoo is an innovative startup focused on reuniting people with their lost belongings. Through our user-friendly application, we provide a platform where individuals can report lost items and find items discovered by others, embodying our principle that 'Nothing remains ownerless'.",
+      "responsibilities": [
+        "Led the technical strategy and development of the GomJoo application.",
+        "Architected a scalable and robust backend infrastructure to support a growing user base.",
+        "Oversaw the entire product lifecycle, from conception and design to deployment and maintenance."
+      ],
+      "technologies": ["PHP", "Laravel", "MySQL", "Redis", "Docker", "Git", "Nginx", "AWS", "CI/CD", "System Architecture"],
+      "link": "https://gomjoo.ir/"
+    },
     {
       "company": "Char-Choob",
       "logo": "images/charchoob.png",
@@ -227,3 +242,4 @@
   }
 }
 
+;
