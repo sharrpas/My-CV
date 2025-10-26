@@ -39,13 +39,13 @@ const cvData =
       "logo": "images/gomjoo.png",
       "position": "CTO",
       "period": "2025 - now",
-      "description": "GomJoo is an innovative startup focused on reuniting people with their lost belongings. Through our user-friendly application, we provide a platform where individuals can report lost items and find items discovered by others, embodying our principle that 'Nothing remains ownerless'.",
+      "description": "GomJoo is an innovative startup focused on reuniting people with their lost belongings. Through our user-friendly application, we provide a platform where individuals can report lost items and find items discovered by others, embodying our principle that 'Nothing remains ownerless.",
       "responsibilities": [
         "Led the technical strategy and development of the GomJoo application.",
         "Architected a scalable and robust backend infrastructure to support a growing user base.",
         "Oversaw the entire product lifecycle, from conception and design to deployment and maintenance."
       ],
-      "technologies": ["PHP", "Laravel", "MySQL", "Redis", "Docker", "Git", "Nginx", "AWS", "CI/CD", "System Architecture"],
+      "technologies": ["CI/CD", "System Architecture", "Laravel", "MySQL", "Redis", "Docker", "Git", "Nginx"],
       "link": "https://gomjoo.ir/"
     },
     {
